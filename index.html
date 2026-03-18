@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SONORIA — Music Academy</title>
+  <meta name="description" content="Premium music education. Master guitar, piano, vocals, drums, violin & music production with world-class instructors.">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="color-scheme" content="only dark">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__inner">
+      <div class="preloader__bars">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <p class="preloader__text">SONORIA</p>
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <!-- Navigation -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#" class="nav__logo" data-cursor="pointer">
+        <span class="nav__logo-icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M12 22V10l12-2v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="22" r="3" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="24" cy="20" r="3" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </span>
+        SONORIA
+      </a>
+
+      <ul class="nav__menu" id="nav-menu">
+        <li><a href="#about" class="nav__link" data-cursor="pointer" data-en="About" data-ru="О нас">About</a></li>
+        <li><a href="#courses" class="nav__link" data-cursor="pointer" data-en="Courses" data-ru="Курсы">Courses</a></li>
+        <li><a href="#instructors" class="nav__link" data-cursor="pointer" data-en="Instructors" data-ru="Педагоги">Instructors</a></li>
+        <li><a href="#pricing" class="nav__link" data-cursor="pointer" data-en="Pricing" data-ru="Тарифы">Pricing</a></li>
+        <li><a href="#faq" class="nav__link" data-cursor="pointer" data-en="FAQ" data-ru="FAQ">FAQ</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <button class="lang-toggle" id="lang-toggle" data-cursor="pointer">
+          <span class="lang-toggle__option lang-toggle__option--active" data-lang-btn="en">EN</span>
+          <span class="lang-toggle__divider">/</span>
+          <span class="lang-toggle__option" data-lang-btn="ru">RU</span>
+        </button>
+        <a href="#pricing" class="btn btn--primary btn--sm nav__cta" data-cursor="pointer" data-en="Enroll Now" data-ru="Записаться">Enroll Now</a>
+        <button class="nav__burger" id="nav-burger" data-cursor="pointer" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <canvas class="hero__canvas" id="hero-canvas"></canvas>
+      <div class="hero__floating-notes" id="floating-notes"></div>
+      <div class="hero__content container">
+        <div class="hero__badge reveal-up">
+          <span class="hero__badge-dot"></span>
+          <span data-en="Enrolling for 2026 Season" data-ru="Набор на сезон 2026">Enrolling for 2026 Season</span>
+        </div>
+        <h1 class="hero__title">
+          <span class="hero__title-line reveal-up" data-en="Master the" data-ru="Овладей">Master the</span>
+          <span class="hero__title-line hero__title-line--accent reveal-up" data-en="Art of Sound" data-ru="Искусством Звука">Art of Sound</span>
+        </h1>
+        <p class="hero__subtitle reveal-up" data-en="World-class music education from Grammy-nominated instructors. Guitar, piano, vocals, drums, violin & music production." data-ru="Музыкальное образование мирового класса от педагогов с номинациями Grammy. Гитара, фортепиано, вокал, барабаны, скрипка и продакшн.">World-class music education from Grammy-nominated instructors. Guitar, piano, vocals, drums, violin & music production.</p>
+        <div class="hero__actions reveal-up">
+          <a href="#courses" class="btn btn--primary btn--lg" data-cursor="pointer" data-en="Explore Courses" data-ru="Смотреть курсы">Explore Courses</a>
+          <a href="#about" class="btn btn--ghost btn--lg" data-cursor="pointer" data-en="Watch Showreel" data-ru="Смотреть шоурил">
+            <span class="btn__play-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+            </span>
+            Watch Showreel
+          </a>
+        </div>
+        <div class="hero__stats reveal-up">
+          <div class="hero__stat">
+            <span class="hero__stat-number" data-count="2500">0</span><span class="hero__stat-plus">+</span>
+            <span class="hero__stat-label" data-en="Students" data-ru="Студентов">Students</span>
+          </div>
+          <div class="hero__stat-divider"></div>
+          <div class="hero__stat">
+            <span class="hero__stat-number" data-count="98">0</span><span class="hero__stat-plus">%</span>
+            <span class="hero__stat-label" data-en="Satisfaction" data-ru="Довольных">Satisfaction</span>
+          </div>
+          <div class="hero__stat-divider"></div>
+          <div class="hero__stat">
+            <span class="hero__stat-number" data-count="15">0</span><span class="hero__stat-plus">+</span>
+            <span class="hero__stat-label" data-en="Years Experience" data-ru="Лет опыта">Years Experience</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero__scroll-indicator">
+        <div class="hero__scroll-mouse">
+          <div class="hero__scroll-wheel"></div>
+        </div>
+        <span data-en="Scroll to explore" data-ru="Листайте вниз">Scroll to explore</span>
+      </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Guitar</span><span class="marquee__dot">&#9679;</span>
+        <span>Piano</span><span class="marquee__dot">&#9679;</span>
+        <span>Vocals</span><span class="marquee__dot">&#9679;</span>
+        <span>Drums</span><span class="marquee__dot">&#9679;</span>
+        <span>Violin</span><span class="marquee__dot">&#9679;</span>
+        <span>Production</span><span class="marquee__dot">&#9679;</span>
+        <span>Composition</span><span class="marquee__dot">&#9679;</span>
+        <span>Mixing</span><span class="marquee__dot">&#9679;</span>
+        <span>Guitar</span><span class="marquee__dot">&#9679;</span>
+        <span>Piano</span><span class="marquee__dot">&#9679;</span>
+        <span>Vocals</span><span class="marquee__dot">&#9679;</span>
+        <span>Drums</span><span class="marquee__dot">&#9679;</span>
+        <span>Violin</span><span class="marquee__dot">&#9679;</span>
+        <span>Production</span><span class="marquee__dot">&#9679;</span>
+        <span>Composition</span><span class="marquee__dot">&#9679;</span>
+        <span>Mixing</span><span class="marquee__dot">&#9679;</span>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="about__grid">
+          <div class="about__visual reveal-left">
+            <div class="about__image-wrapper">
+              <div class="about__image" data-parallax="0.15">
+                <div class="about__image-placeholder">
+                  <svg viewBox="0 0 400 500" fill="none">
+                    <rect width="400" height="500" rx="12" fill="#1a1a1a"/>
+                    <circle cx="200" cy="200" r="80" stroke="#c9a84c" stroke-width="1" opacity="0.3"/>
+                    <circle cx="200" cy="200" r="120" stroke="#c9a84c" stroke-width="0.5" opacity="0.15"/>
+                    <circle cx="200" cy="200" r="160" stroke="#c9a84c" stroke-width="0.5" opacity="0.1"/>
+                    <path d="M180 240V160l60-10v60" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="180" cy="240" r="12" stroke="#c9a84c" stroke-width="2"/>
+                    <circle cx="240" cy="230" r="12" stroke="#c9a84c" stroke-width="2"/>
+                    <text x="200" y="340" text-anchor="middle" fill="#555" font-family="Inter" font-size="14">Studio Session</text>
+                  </svg>
+                </div>
+              </div>
+              <div class="about__experience-badge">
+                <span class="about__experience-number">15+</span>
+                <span class="about__experience-text" data-en="Years of Excellence" data-ru="Лет мастерства">Years of Excellence</span>
+              </div>
+            </div>
+          </div>
+          <div class="about__content reveal-right">
+            <span class="section-tag" data-en="About the Academy" data-ru="Об академии">About the Academy</span>
+            <h2 class="section-title" data-en="Where Passion Meets Precision" data-ru="Где страсть встречает мастерство">Where Passion<br>Meets Precision</h2>
+            <p class="about__text" data-en="Founded in 2011, SONORIA has grown from a small studio in Brooklyn into one of the most respected music academies in the world. Our philosophy is simple: music is a language, and like any language, it requires immersion, practice, and the right mentors." data-ru="Основанная в 2011 году, SONORIA выросла из маленькой студии в Бруклине в одну из самых уважаемых музыкальных академий мира. Наша философия проста: музыка — это язык, и как любой язык, она требует погружения, практики и правильных наставников.">Founded in 2011, SONORIA has grown from a small studio in Brooklyn into one of the most respected music academies in the world. Our philosophy is simple: music is a language, and like any language, it requires immersion, practice, and the right mentors.</p>
+            <p class="about__text" data-en="Every student receives a personalized curriculum designed around their goals — whether you dream of performing on stage, producing chart-topping hits, or simply playing for the joy of it." data-ru="Каждый студент получает персональную программу, выстроенную вокруг его целей — хотите ли вы выступать на сцене, продюсировать хиты или просто играть в своё удовольствие.">Every student receives a personalized curriculum designed around their goals — whether you dream of performing on stage, producing chart-topping hits, or simply playing for the joy of it.</p>
+            <div class="about__features">
+              <div class="about__feature">
+                <div class="about__feature-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                </div>
+                <div>
+                  <h4 data-en="Structured Curriculum" data-ru="Структурная программа">Structured Curriculum</h4>
+                  <p data-en="From beginner to virtuoso, every step is mapped out" data-ru="От начинающего до виртуоза, каждый шаг продуман">From beginner to virtuoso, every step is mapped out</p>
+                </div>
+              </div>
+              <div class="about__feature">
+                <div class="about__feature-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg>
+                </div>
+                <div>
+                  <h4 data-en="Live & Online" data-ru="Живые и онлайн">Live & Online</h4>
+                  <p data-en="Learn in our studios or from anywhere in the world" data-ru="Учитесь в нашей студии или из любой точки мира">Learn in our studios or from anywhere in the world</p>
+                </div>
+              </div>
+              <div class="about__feature">
+                <div class="about__feature-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                </div>
+                <div>
+                  <h4 data-en="Pro-Grade Equipment" data-ru="Проф. оборудование">Pro-Grade Equipment</h4>
+                  <p data-en="Access to top-tier instruments and recording gear" data-ru="Доступ к инструментам и оборудованию высшего класса">Access to top-tier instruments and recording gear</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses section" id="courses">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag" data-en="Our Programs" data-ru="Наши программы">Our Programs</span>
+          <h2 class="section-title" data-en="Choose Your Instrument" data-ru="Выберите инструмент">Choose Your<br>Instrument</h2>
+          <p class="section-desc" data-en="Six meticulously crafted programs, each designed to take you from where you are to where you want to be." data-ru="Шесть детально проработанных программ, каждая из которых ведёт вас от текущего уровня к вашей цели.">Six meticulously crafted programs, each designed to take you from where you are to where you want to be.</p>
+        </div>
+        <div class="courses__grid">
+          <!-- Guitar -->
+          <div class="course-card reveal-up" data-tilt>
+            <div class="course-card__icon">
+              <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5">
+                <ellipse cx="40" cy="52" rx="18" ry="22"/>
+                <circle cx="40" cy="52" r="6"/>
+                <path d="M40 30V8M35 8h10"/>
+                <path d="M22 52c0-10 8-22 18-22s18 12 18 22"/>
+              </svg>
+            </div>
+            <h3 class="course-card__title" data-en="Guitar" data-ru="Гитара">Guitar</h3>
+            <p class="course-card__desc" data-en="Acoustic, electric & classical. From chords to shredding solos." data-ru="Акустика, электро и классика. От аккордов до виртуозных соло.">Acoustic, electric & classical. From chords to shredding solos.</p>
+            <div class="course-card__meta">
+              <span data-en="24 Weeks" data-ru="24 Недели">24 Weeks</span>
+              <span data-en="All Levels" data-ru="Все уровни">All Levels</span>
+            </div>
+            <div class="course-card__arrow">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </div>
+          </div>
+          <!-- Piano -->
+          <div class="course-card reveal-up" data-tilt>
+            <div class="course-card__icon">
+              <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="10" y="25" width="60" height="35" rx="3"/>
+                <path d="M10 40h60"/>
+                <path d="M25 25v15M40 25v15M55 25v15"/>
+                <rect x="20" y="25" width="8" height="10" rx="1" fill="currentColor" opacity="0.3"/>
+                <rect x="35" y="25" width="8" height="10" rx="1" fill="currentColor" opacity="0.3"/>
+                <rect x="50" y="25" width="8" height="10" rx="1" fill="currentColor" opacity="0.3"/>
+              </svg>
+            </div>
+            <h3 class="course-card__title" data-en="Piano" data-ru="Фортепиано">Piano</h3>
+            <p class="course-card__desc" data-en="Classical, jazz & contemporary. Build technique and musicality." data-ru="Классика, джаз и современность. Развитие техники и музыкальности.">Classical, jazz & contemporary. Build technique and musicality.</p>
+            <div class="course-card__meta">
+              <span data-en="32 Weeks" data-ru="32 Недели">32 Weeks</span>
+              <span data-en="All Levels" data-ru="Все уровни">All Levels</span>
+            </div>
+            <div class="course-card__arrow">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </div>
+          </div>
+          <!-- Vocals -->
+          <div class="course-card reveal-up" data-tilt>
+            <div class="course-card__icon">
+              <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="32" y="15" width="16" height="28" rx="8"/>
+                <path d="M24 35c0 9 7 16 16 16s16-7 16-16"/>
+                <path d="M40 51v12M32 63h16"/>
+              </svg>
+            </div>
+            <h3 class="course-card__title" data-en="Vocals" data-ru="Вокал">Vocals</h3>
+            <p class="course-card__desc" data-en="Breath control, range expansion, performance techniques." data-ru="Контроль дыхания, расширение диапазона, техника выступлений.">Breath control, range expansion, performance techniques.</p>
+            <div class="course-card__meta">
+              <span data-en="20 Weeks" data-ru="20 Недель">20 Weeks</span>
+              <span data-en="All Levels" data-ru="Все уровни">All Levels</span>
+            </div>
+            <div class="course-card__arrow">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </div>
+          </div>
+          <!-- Drums -->
+          <div class="course-card reveal-up" data-tilt>
+            <div class="course-card__icon">
+              <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5">
+                <ellipse cx="40" cy="45" rx="25" ry="10"/>
+                <ellipse cx="40" cy="35" rx="25" ry="10"/>
+                <path d="M15 35v10M65 35v10"/>
+                <path d="M30 20l10 15M50 20l-10 15"/>
+                <circle cx="28" cy="18" r="3" fill="currentColor" opacity="0.3"/>
+                <circle cx="52" cy="18" r="3" fill="currentColor" opacity="0.3"/>
+              </svg>
+            </div>
+            <h3 class="course-card__title" data-en="Drums" data-ru="Барабаны">Drums</h3>
+            <p class="course-card__desc" data-en="Groove, fills, rudiments. From rock to jazz to electronic beats." data-ru="Грув, филлы, рудименты. От рока до джаза и электронных битов.">Groove, fills, rudiments. From rock to jazz to electronic beats.</p>
+            <div class="course-card__meta">
+              <span data-en="20 Weeks" data-ru="20 Недель">20 Weeks</span>
+              <span data-en="All Levels" data-ru="Все уровни">All Levels</span>
+            </div>
+            <div class="course-card__arrow">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </div>
+          </div>
+          <!-- Violin -->
+          <div class="course-card reveal-up" data-tilt>
+            <div class="course-card__icon">
+              <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M40 12v8"/>
+                <ellipse cx="40" cy="35" rx="10" ry="14"/>
+                <ellipse cx="40" cy="55" rx="14" ry="16"/>
+                <path d="M33 48c4 3 10 3 14 0"/>
+                <path d="M36 55h8"/>
+                <circle cx="38" cy="52" r="1.5" fill="currentColor"/>
+                <circle cx="42" cy="52" r="1.5" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3 class="course-card__title" data-en="Violin" data-ru="Скрипка">Violin</h3>
+            <p class="course-card__desc" data-en="Orchestral, solo & folk. Develop intonation and expressive bowing." data-ru="Оркестровая, сольная и фолк. Интонация и выразительный смычок.">Orchestral, solo & folk. Develop intonation and expressive bowing.</p>
+            <div class="course-card__meta">
+              <span data-en="28 Weeks" data-ru="28 Недель">28 Weeks</span>
+              <span data-en="All Levels" data-ru="Все уровни">All Levels</span>
+            </div>
+            <div class="course-card__arrow">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </div>
+          </div>
+          <!-- Production -->
+          <div class="course-card reveal-up" data-tilt>
+            <div class="course-card__icon">
+              <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="12" y="20" width="56" height="36" rx="4"/>
+                <path d="M12 30h56"/>
+                <rect x="18" y="36" width="8" height="14" rx="1" fill="currentColor" opacity="0.2"/>
+                <rect x="30" y="40" width="8" height="10" rx="1" fill="currentColor" opacity="0.2"/>
+                <rect x="42" y="34" width="8" height="16" rx="1" fill="currentColor" opacity="0.2"/>
+                <rect x="54" y="38" width="8" height="12" rx="1" fill="currentColor" opacity="0.2"/>
+                <circle cx="16" cy="25" r="1.5" fill="currentColor" opacity="0.4"/>
+                <circle cx="21" cy="25" r="1.5" fill="currentColor" opacity="0.4"/>
+                <circle cx="26" cy="25" r="1.5" fill="currentColor" opacity="0.4"/>
+              </svg>
+            </div>
+            <h3 class="course-card__title" data-en="Production" data-ru="Продакшн">Production</h3>
+            <p class="course-card__desc" data-en="DAW mastery, mixing, sound design & beat-making. Industry-ready skills." data-ru="DAW, сведение, саунд-дизайн и битмейкинг. Навыки для индустрии.">DAW mastery, mixing, sound design & beat-making. Industry-ready skills.</p>
+            <div class="course-card__meta">
+              <span data-en="36 Weeks" data-ru="36 Недель">36 Weeks</span>
+              <span data-en="Intermediate+" data-ru="Средний+">Intermediate+</span>
+            </div>
+            <div class="course-card__arrow">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Instructors Section -->
+    <section class="instructors section" id="instructors">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag" data-en="Meet the Masters" data-ru="Наши мастера">Meet the Masters</span>
+          <h2 class="section-title" data-en="Learn from the Best" data-ru="Учитесь у лучших">Learn from<br>the Best</h2>
+        </div>
+        <div class="instructors__grid">
+          <div class="instructor-card reveal-up" data-cursor="pointer">
+            <div class="instructor-card__image">
+              <svg viewBox="0 0 300 380" fill="none">
+                <rect width="300" height="380" rx="12" fill="#1a1a1a"/>
+                <circle cx="150" cy="140" r="50" stroke="#c9a84c" stroke-width="1" opacity="0.3"/>
+                <circle cx="150" cy="140" r="35" fill="#222"/>
+                <path d="M140 130c0-6 4-10 10-10s10 4 10 10" stroke="#555" stroke-width="1.5"/>
+                <circle cx="150" cy="145" r="2" fill="#555"/>
+                <text x="150" y="240" text-anchor="middle" fill="#555" font-family="Inter" font-size="12">Photo</text>
+              </svg>
+            </div>
+            <div class="instructor-card__info">
+              <h3 data-en="Marcus Rivera" data-ru="Маркус Ривера">Marcus Rivera</h3>
+              <span class="instructor-card__role" data-en="Guitar & Composition" data-ru="Гитара и Композиция">Guitar & Composition</span>
+              <p data-en="Former lead guitarist for The Satellites. 20+ years of touring and teaching." data-ru="Бывший лид-гитарист The Satellites. 20+ лет гастролей и преподавания.">Former lead guitarist for The Satellites. 20+ years of touring and teaching.</p>
+            </div>
+          </div>
+          <div class="instructor-card reveal-up" data-cursor="pointer">
+            <div class="instructor-card__image">
+              <svg viewBox="0 0 300 380" fill="none">
+                <rect width="300" height="380" rx="12" fill="#1a1a1a"/>
+                <circle cx="150" cy="140" r="50" stroke="#c9a84c" stroke-width="1" opacity="0.3"/>
+                <circle cx="150" cy="140" r="35" fill="#222"/>
+                <path d="M140 130c0-6 4-10 10-10s10 4 10 10" stroke="#555" stroke-width="1.5"/>
+                <circle cx="150" cy="145" r="2" fill="#555"/>
+                <text x="150" y="240" text-anchor="middle" fill="#555" font-family="Inter" font-size="12">Photo</text>
+              </svg>
+            </div>
+            <div class="instructor-card__info">
+              <h3 data-en="Elena Voronova" data-ru="Елена Воронова">Elena Voronova</h3>
+              <span class="instructor-card__role" data-en="Piano & Music Theory" data-ru="Фортепиано и Теория">Piano & Music Theory</span>
+              <p data-en="Juilliard graduate. Performed at Carnegie Hall and Royal Albert Hall." data-ru="Выпускница Джульярда. Выступала в Карнеги-Холле и Ройял Альберт Холле.">Juilliard graduate. Performed at Carnegie Hall and Royal Albert Hall.</p>
+            </div>
+          </div>
+          <div class="instructor-card reveal-up" data-cursor="pointer">
+            <div class="instructor-card__image">
+              <svg viewBox="0 0 300 380" fill="none">
+                <rect width="300" height="380" rx="12" fill="#1a1a1a"/>
+                <circle cx="150" cy="140" r="50" stroke="#c9a84c" stroke-width="1" opacity="0.3"/>
+                <circle cx="150" cy="140" r="35" fill="#222"/>
+                <path d="M140 130c0-6 4-10 10-10s10 4 10 10" stroke="#555" stroke-width="1.5"/>
+                <circle cx="150" cy="145" r="2" fill="#555"/>
+                <text x="150" y="240" text-anchor="middle" fill="#555" font-family="Inter" font-size="12">Photo</text>
+              </svg>
+            </div>
+            <div class="instructor-card__info">
+              <h3 data-en="James Okafor" data-ru="Джеймс Окафор">James Okafor</h3>
+              <span class="instructor-card__role" data-en="Vocals & Performance" data-ru="Вокал и Сцена">Vocals & Performance</span>
+              <p data-en="Grammy-nominated vocalist. Vocal coach for platinum-selling artists." data-ru="Вокалист с номинацией Grammy. Коуч платиновых артистов.">Grammy-nominated vocalist. Vocal coach for platinum-selling artists.</p>
+            </div>
+          </div>
+          <div class="instructor-card reveal-up" data-cursor="pointer">
+            <div class="instructor-card__image">
+              <svg viewBox="0 0 300 380" fill="none">
+                <rect width="300" height="380" rx="12" fill="#1a1a1a"/>
+                <circle cx="150" cy="140" r="50" stroke="#c9a84c" stroke-width="1" opacity="0.3"/>
+                <circle cx="150" cy="140" r="35" fill="#222"/>
+                <path d="M140 130c0-6 4-10 10-10s10 4 10 10" stroke="#555" stroke-width="1.5"/>
+                <circle cx="150" cy="145" r="2" fill="#555"/>
+                <text x="150" y="240" text-anchor="middle" fill="#555" font-family="Inter" font-size="12">Photo</text>
+              </svg>
+            </div>
+            <div class="instructor-card__info">
+              <h3 data-en="Kai Tanaka" data-ru="Кай Танака">Kai Tanaka</h3>
+              <span class="instructor-card__role" data-en="Production & Sound Design" data-ru="Продакшн и Саунд-дизайн">Production & Sound Design</span>
+              <p data-en="Produced for Sony, Universal & Netflix. Expert in Ableton & Pro Tools." data-ru="Работал с Sony, Universal и Netflix. Эксперт Ableton и Pro Tools.">Produced for Sony, Universal & Netflix. Expert in Ableton & Pro Tools.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section" id="testimonials">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag" data-en="Testimonials" data-ru="Отзывы">Testimonials</span>
+          <h2 class="section-title" data-en="What Our Students Say" data-ru="Что говорят студенты">What Our<br>Students Say</h2>
+        </div>
+        <div class="testimonials__grid">
+          <div class="testimonial-card testimonial-card--featured reveal-up">
+            <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote class="testimonial-card__text" data-en="&ldquo;SONORIA completely transformed my understanding of music. In 6 months, I went from barely strumming chords to writing my own songs. Marcus is an incredible mentor — patient, knowledgeable, and genuinely passionate.&rdquo;" data-ru="&laquo;SONORIA полностью изменила моё понимание музыки. За 6 месяцев я прошёл путь от простых аккордов до написания собственных песен. Маркус — невероятный наставник: терпеливый, знающий и по-настоящему увлечённый.&raquo;">&ldquo;SONORIA completely transformed my understanding of music. In 6 months, I went from barely strumming chords to writing my own songs. Marcus is an incredible mentor — patient, knowledgeable, and genuinely passionate.&rdquo;</blockquote>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">A</div>
+              <div>
+                <strong data-en="Alex Chen" data-ru="Алекс Чен">Alex Chen</strong>
+                <span data-en="Guitar Student, 2025" data-ru="Студент гитары, 2025">Guitar Student, 2025</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card reveal-up">
+            <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote class="testimonial-card__text" data-en="&ldquo;The production course is worth every penny. Kai doesn't just teach you the tools — he teaches you how to think like a producer. I landed my first sync deal within a year.&rdquo;" data-ru="&laquo;Курс продакшна стоит каждого рубля. Кай учит не просто инструментам — он учит мыслить как продюсер. Я получил свой первый контракт на синхронизацию в течение года.&raquo;">&ldquo;The production course is worth every penny. Kai doesn't just teach you the tools — he teaches you how to think like a producer. I landed my first sync deal within a year.&rdquo;</blockquote>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">S</div>
+              <div>
+                <strong data-en="Sarah Mitchell" data-ru="Сара Митчелл">Sarah Mitchell</strong>
+                <span data-en="Production Student, 2024" data-ru="Студент продакшна, 2024">Production Student, 2024</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card reveal-up">
+            <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote class="testimonial-card__text" data-en="&ldquo;Elena's piano lessons are a masterclass in patience and precision. She helped me prepare for my conservatory audition and I got accepted on my first try!&rdquo;" data-ru="&laquo;Уроки фортепиано Елены — это мастер-класс терпения и точности. Она помогла мне подготовиться к прослушиванию в консерваторию, и меня приняли с первого раза!&raquo;">&ldquo;Elena's piano lessons are a masterclass in patience and precision. She helped me prepare for my conservatory audition and I got accepted on my first try!&rdquo;</blockquote>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">D</div>
+              <div>
+                <strong data-en="David Park" data-ru="Давид Парк">David Park</strong>
+                <span data-en="Piano Student, 2025" data-ru="Студент фортепиано, 2025">Piano Student, 2025</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing section" id="pricing">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag" data-en="Pricing" data-ru="Тарифы">Pricing</span>
+          <h2 class="section-title" data-en="Invest in Your Sound" data-ru="Инвестируйте в свой звук">Invest in<br>Your Sound</h2>
+          <p class="section-desc" data-en="Transparent pricing. No hidden fees. Cancel anytime." data-ru="Прозрачные цены. Без скрытых платежей. Отмена в любой момент.">Transparent pricing. No hidden fees. Cancel anytime.</p>
+        </div>
+        <div class="pricing__grid">
+          <!-- Starter -->
+          <div class="pricing-card reveal-up">
+            <div class="pricing-card__header">
+              <h3 data-en="Solo" data-ru="Соло">Solo</h3>
+              <p class="pricing-card__desc" data-en="Perfect for beginners exploring their first instrument" data-ru="Идеально для начинающих, изучающих первый инструмент">Perfect for beginners exploring their first instrument</p>
+            </div>
+            <div class="pricing-card__price">
+              <span class="pricing-card__currency">$</span>
+              <span class="pricing-card__amount">49</span>
+              <span class="pricing-card__period" data-en="/month" data-ru="/месяц">/month</span>
+            </div>
+            <ul class="pricing-card__features">
+              <li data-en="1 instrument course" data-ru="1 курс инструмента">1 instrument course</li>
+              <li data-en="4 live sessions/month" data-ru="4 живых занятия/месяц">4 live sessions/month</li>
+              <li data-en="Video lesson library" data-ru="Библиотека видеоуроков">Video lesson library</li>
+              <li data-en="Practice tracking app" data-ru="Приложение для трекинга">Practice tracking app</li>
+              <li data-en="Community access" data-ru="Доступ к сообществу">Community access</li>
+            </ul>
+            <a href="#" class="btn btn--outline btn--full" data-cursor="pointer" data-en="Get Started" data-ru="Начать">Get Started</a>
+          </div>
+          <!-- Pro — Featured -->
+          <div class="pricing-card pricing-card--featured reveal-up">
+            <div class="pricing-card__badge" data-en="Most Popular" data-ru="Популярный">Most Popular</div>
+            <div class="pricing-card__header">
+              <h3 data-en="Ensemble" data-ru="Ансамбль">Ensemble</h3>
+              <p class="pricing-card__desc" data-en="For serious learners ready to accelerate their progress" data-ru="Для серьёзных учеников, готовых ускорить прогресс">For serious learners ready to accelerate their progress</p>
+            </div>
+            <div class="pricing-card__price">
+              <span class="pricing-card__currency">$</span>
+              <span class="pricing-card__amount">99</span>
+              <span class="pricing-card__period" data-en="/month" data-ru="/месяц">/month</span>
+            </div>
+            <ul class="pricing-card__features">
+              <li data-en="Up to 3 instrument courses" data-ru="До 3 курсов инструментов">Up to 3 instrument courses</li>
+              <li data-en="8 live sessions/month" data-ru="8 живых занятий/месяц">8 live sessions/month</li>
+              <li data-en="1-on-1 mentor sessions" data-ru="Индивидуальные сессии">1-on-1 mentor sessions</li>
+              <li data-en="Recording studio access" data-ru="Доступ к студии записи">Recording studio access</li>
+              <li data-en="Performance opportunities" data-ru="Возможности выступлений">Performance opportunities</li>
+              <li data-en="Priority support" data-ru="Приоритетная поддержка">Priority support</li>
+            </ul>
+            <a href="#" class="btn btn--primary btn--full" data-cursor="pointer" data-en="Get Started" data-ru="Начать">Get Started</a>
+          </div>
+          <!-- Virtuoso -->
+          <div class="pricing-card reveal-up">
+            <div class="pricing-card__header">
+              <h3 data-en="Virtuoso" data-ru="Виртуоз">Virtuoso</h3>
+              <p class="pricing-card__desc" data-en="The complete experience for aspiring professionals" data-ru="Полный опыт для будущих профессионалов">The complete experience for aspiring professionals</p>
+            </div>
+            <div class="pricing-card__price">
+              <span class="pricing-card__currency">$</span>
+              <span class="pricing-card__amount">179</span>
+              <span class="pricing-card__period" data-en="/month" data-ru="/месяц">/month</span>
+            </div>
+            <ul class="pricing-card__features">
+              <li data-en="All instrument courses" data-ru="Все курсы инструментов">All instrument courses</li>
+              <li data-en="Unlimited live sessions" data-ru="Безлимитные живые занятия">Unlimited live sessions</li>
+              <li data-en="Weekly 1-on-1 mentoring" data-ru="Еженедельный менторинг">Weekly 1-on-1 mentoring</li>
+              <li data-en="Full studio access 24/7" data-ru="Полный доступ к студии 24/7">Full studio access 24/7</li>
+              <li data-en="Industry networking events" data-ru="Нетворкинг-мероприятия">Industry networking events</li>
+              <li data-en="Career placement support" data-ru="Помощь в трудоустройстве">Career placement support</li>
+              <li data-en="Certificate of completion" data-ru="Сертификат об окончании">Certificate of completion</li>
+            </ul>
+            <a href="#" class="btn btn--outline btn--full" data-cursor="pointer" data-en="Get Started" data-ru="Начать">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq section" id="faq">
+      <div class="container">
+        <div class="faq__layout">
+          <div class="faq__left reveal-left">
+            <span class="section-tag" data-en="FAQ" data-ru="FAQ">FAQ</span>
+            <h2 class="section-title" data-en="Questions? Answers." data-ru="Вопросы? Ответы.">Questions?<br>Answers.</h2>
+            <p class="faq__contact-text" data-en="Can't find what you're looking for?" data-ru="Не нашли ответ?">Can't find what you're looking for?</p>
+            <a href="#" class="btn btn--ghost" data-cursor="pointer" data-en="Contact Us" data-ru="Связаться">Contact Us</a>
+          </div>
+          <div class="faq__right reveal-right">
+            <div class="faq-item" data-cursor="pointer">
+              <button class="faq-item__question">
+                <span data-en="Do I need any prior music experience?" data-ru="Нужен ли мне музыкальный опыт?">Do I need any prior music experience?</span>
+                <svg class="faq-item__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg>
+              </button>
+              <div class="faq-item__answer">
+                <p data-en="Not at all! Our courses are designed for all levels, from complete beginners to advanced musicians looking to refine their skills. Your instructor will tailor the curriculum to your current level." data-ru="Совсем нет! Наши курсы рассчитаны на все уровни — от полных новичков до продвинутых музыкантов. Преподаватель адаптирует программу под ваш текущий уровень.">Not at all! Our courses are designed for all levels, from complete beginners to advanced musicians looking to refine their skills. Your instructor will tailor the curriculum to your current level.</p>
+              </div>
+            </div>
+            <div class="faq-item" data-cursor="pointer">
+              <button class="faq-item__question">
+                <span data-en="What equipment do I need to start?" data-ru="Какое оборудование мне нужно?">What equipment do I need to start?</span>
+                <svg class="faq-item__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg>
+              </button>
+              <div class="faq-item__answer">
+                <p data-en="For instrument courses, you'll need your own instrument for practice at home. For production courses, a laptop with headphones is sufficient to start — we'll guide you on software setup. Our studios are fully equipped for in-person sessions." data-ru="Для курсов инструментов вам понадобится свой инструмент для домашних занятий. Для продакшна достаточно ноутбука с наушниками — мы поможем с настройкой софта. Наши студии полностью оборудованы для очных занятий.">For instrument courses, you'll need your own instrument for practice at home. For production courses, a laptop with headphones is sufficient to start — we'll guide you on software setup. Our studios are fully equipped for in-person sessions.</p>
+              </div>
+            </div>
+            <div class="faq-item" data-cursor="pointer">
+              <button class="faq-item__question">
+                <span data-en="Can I switch instruments mid-course?" data-ru="Можно ли сменить инструмент в процессе?">Can I switch instruments mid-course?</span>
+                <svg class="faq-item__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg>
+              </button>
+              <div class="faq-item__answer">
+                <p data-en="Yes! Ensemble and Virtuoso plans allow you to explore multiple instruments. You can switch or add instruments at any point. Solo plan members can upgrade to access additional courses." data-ru="Да! Планы Ансамбль и Виртуоз позволяют изучать несколько инструментов. Вы можете сменить или добавить инструмент в любой момент. Участники плана Соло могут перейти на более высокий тариф.">Yes! Ensemble and Virtuoso plans allow you to explore multiple instruments. You can switch or add instruments at any point. Solo plan members can upgrade to access additional courses.</p>
+              </div>
+            </div>
+            <div class="faq-item" data-cursor="pointer">
+              <button class="faq-item__question">
+                <span data-en="Are the live sessions recorded?" data-ru="Записываются ли живые занятия?">Are the live sessions recorded?</span>
+                <svg class="faq-item__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg>
+              </button>
+              <div class="faq-item__answer">
+                <p data-en="Yes, all live sessions are recorded and available in your dashboard for 30 days. Virtuoso members get permanent access to all session recordings." data-ru="Да, все живые занятия записываются и доступны в вашем кабинете 30 дней. Участники тарифа Виртуоз получают постоянный доступ ко всем записям.">Yes, all live sessions are recorded and available in your dashboard for 30 days. Virtuoso members get permanent access to all session recordings.</p>
+              </div>
+            </div>
+            <div class="faq-item" data-cursor="pointer">
+              <button class="faq-item__question">
+                <span data-en="What is your refund policy?" data-ru="Какова политика возврата?">What is your refund policy?</span>
+                <svg class="faq-item__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg>
+              </button>
+              <div class="faq-item__answer">
+                <p data-en="We offer a full refund within the first 14 days if you're not satisfied. After that, you can cancel your subscription at any time and retain access until the end of your billing period." data-ru="Мы предлагаем полный возврат в течение первых 14 дней, если вы не довольны. После этого вы можете отменить подписку в любой момент и сохранить доступ до конца оплаченного периода.">We offer a full refund within the first 14 days if you're not satisfied. After that, you can cancel your subscription at any time and retain access until the end of your billing period.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta section" id="cta">
+      <div class="container">
+        <div class="cta__content reveal-up">
+          <h2 class="cta__title" data-en="Ready to Start Your Musical Journey?" data-ru="Готовы начать музыкальное путешествие?">Ready to Start Your<br>Musical Journey?</h2>
+          <p class="cta__text" data-en="Join 2,500+ students who chose SONORIA to unlock their musical potential. Your first lesson is on us." data-ru="Присоединяйтесь к 2500+ студентам, выбравшим SONORIA. Первый урок — бесплатно.">Join 2,500+ students who chose SONORIA to unlock their musical potential. Your first lesson is on us.</p>
+          <div class="cta__actions">
+            <a href="#pricing" class="btn btn--primary btn--lg" data-cursor="pointer" data-en="Start Free Trial" data-ru="Начать бесплатно">Start Free Trial</a>
+            <a href="#" class="btn btn--ghost btn--lg" data-cursor="pointer" data-en="Book a Tour" data-ru="Записаться на экскурсию">Book a Tour</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="#" class="footer__logo" data-cursor="pointer">SONORIA</a>
+          <p data-en="Premium music education since 2011. Shaping the next generation of musicians, producers, and artists." data-ru="Премиальное музыкальное образование с 2011 года. Формируем новое поколение музыкантов, продюсеров и артистов.">Premium music education since 2011. Shaping the next generation of musicians, producers, and artists.</p>
+        </div>
+        <div class="footer__links">
+          <div class="footer__col">
+            <h4 data-en="Academy" data-ru="Академия">Academy</h4>
+            <ul>
+              <li><a href="#about" data-cursor="pointer" data-en="About Us" data-ru="О нас">About Us</a></li>
+              <li><a href="#instructors" data-cursor="pointer" data-en="Instructors" data-ru="Педагоги">Instructors</a></li>
+              <li><a href="#" data-cursor="pointer" data-en="Careers" data-ru="Карьера">Careers</a></li>
+              <li><a href="#" data-cursor="pointer" data-en="Blog" data-ru="Блог">Blog</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4 data-en="Programs" data-ru="Программы">Programs</h4>
+            <ul>
+              <li><a href="#courses" data-cursor="pointer" data-en="Guitar" data-ru="Гитара">Guitar</a></li>
+              <li><a href="#courses" data-cursor="pointer" data-en="Piano" data-ru="Фортепиано">Piano</a></li>
+              <li><a href="#courses" data-cursor="pointer" data-en="Vocals" data-ru="Вокал">Vocals</a></li>
+              <li><a href="#courses" data-cursor="pointer" data-en="Production" data-ru="Продакшн">Production</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4 data-en="Connect" data-ru="Связь">Connect</h4>
+            <ul>
+              <li><a href="#" data-cursor="pointer">Instagram</a></li>
+              <li><a href="#" data-cursor="pointer">YouTube</a></li>
+              <li><a href="#" data-cursor="pointer">Spotify</a></li>
+              <li><a href="#" data-cursor="pointer">TikTok</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 SONORIA. <span data-en="All rights reserved." data-ru="Все права защищены.">All rights reserved.</span></p>
+        <div class="footer__legal">
+          <a href="#" data-cursor="pointer" data-en="Privacy Policy" data-ru="Конфиденциальность">Privacy Policy</a>
+          <a href="#" data-cursor="pointer" data-en="Terms of Service" data-ru="Условия использования">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
