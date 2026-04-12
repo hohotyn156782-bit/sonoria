@@ -340,4 +340,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
   sections.forEach(section => sectionObserver.observe(section));
 
+  // --- Enroll Form ---
+  const enrollForm = document.getElementById('enroll-form');
+  if (enrollForm) {
+    enrollForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(enrollForm);
+      const data = Object.fromEntries(formData.entries());
+
+      // Demo: show success message
+      const wrapper = enrollForm.closest('.enroll__form-wrapper');
+      const currentLangVal = document.documentElement.getAttribute('data-lang') || 'en';
+
+      const successTitle = currentLangVal === 'ru' ? 'Заявка отправлена!' : 'Application Sent!';
+      const successText = currentLangVal === 'ru'
+        ? 'Спасибо за интерес к SONORIA! Мы свяжемся с вами в ближайшее время.'
+        : 'Thank you for your interest in SONORIA! We\'ll get back to you shortly.';
+
+      wrapper.innerHTML = `
+        <div class="enroll__form-success">
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M8 12l3 3 5-5"/>
+          </svg>
+          <h3 data-en="Application Sent!" data-ru="Заявка отправлена!">${successTitle}</h3>
+          <p data-en="Thank you for your interest in SONORIA! We'll get back to you shortly." data-ru="Спасибо за интерес к SONORIA! Мы свяжемся с вами в ближайшее время.">${successText}</p>
+        </div>
+      `;
+    });
+  }
+
+  // --- Language toggle: update select options ---
+  const origLangClick = langToggle.onclick;
+  langToggle.addEventListener('click', () => {
+    const lang = document.documentElement.getAttribute('data-lang') || 'en';
+    // Update select options text
+    document.querySelectorAll('select option[data-' + lang + ']').forEach(opt => {
+      const text = opt.getAttribute('data-' + lang);
+      if (text) opt.textContent = text;
+    });
+  });
+
 });
